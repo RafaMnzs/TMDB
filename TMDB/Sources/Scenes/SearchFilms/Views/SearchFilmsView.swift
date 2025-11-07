@@ -45,8 +45,6 @@ public final class SearchFilmsView: UIView, ViewCode {
         fatalError("init(coder:) has not been implemented")
     }
 
-
-
     @objc private func textFieldDidChange() {
         let text = searchBar.text ?? ""
         let hasText = !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty

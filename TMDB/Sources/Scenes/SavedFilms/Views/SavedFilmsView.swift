@@ -11,15 +11,15 @@ final class SavedFilmsView: UIView, ViewCode {
     private var films: [Film] = []
 
     private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .systemBackground
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(SavedFilmsViewCell.self, forCellWithReuseIdentifier: SavedFilmsViewCell.identifier)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        return collectionView
+        let _layout = UICollectionViewFlowLayout()
+        _layout.scrollDirection = .vertical
+        let _collectionView = UICollectionView(frame: .zero, collectionViewLayout: _layout)
+        _collectionView.backgroundColor = .systemBackground
+        _collectionView.delegate = self
+        _collectionView.dataSource = self
+        _collectionView.register(SavedFilmsViewCell.self, forCellWithReuseIdentifier: SavedFilmsViewCell.identifier)
+        _collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return _collectionView
     }()
 
     init() {

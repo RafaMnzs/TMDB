@@ -19,7 +19,7 @@ public extension UIImageView {
                 switch result {
                 case .success:
                     break
-                case .failure(let error):
+                case .failure(_):
                     self.image = placeholder
                 }
             }
