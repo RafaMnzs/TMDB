@@ -33,37 +33,6 @@ O projeto segue o padrão MVVM-C, que separa responsabilidades e melhora a escal
 
 ⸻
 
-🧭 Fluxo da Arquitetura MVVM-C
-
-Abaixo está um diagrama simplificado do fluxo de comunicação entre os componentes da arquitetura MVVM-C:
-
-💡 O diagrama acima é gerado automaticamente a partir de um script Mermaid hospedado via mermaid.ink.
-
-⸻
-
-📁 Estrutura do Projeto
-
-TMDB/
-├── Application/
-│   ├── AppCoordinator.swift
-│   └── SceneDelegate.swift
-├── Modules/
-│   ├── MovieList/
-│   │   ├── View/
-│   │   ├── ViewModel/
-│   │   └── Model/
-│   └── MovieDetail/
-│       ├── View/
-│       ├── ViewModel/
-│       └── Model/
-├── Resources/
-│   └── Assets.xcassets
-└── Utils/
-    └── Extensions/
-
-
-⸻
-
 🧑‍💻 Autor
 
 Desenvolvido por [Rafael Menezes]
