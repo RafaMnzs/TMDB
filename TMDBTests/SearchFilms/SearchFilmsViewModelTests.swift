@@ -38,4 +38,17 @@ final class SearchFilmsViewModelTests: XCTestCase {
         }
         sut.searchFilms(query: query)
     }
+
+    func test_show_detail() {
+        let query = "matrix"
+
+        sut.onFilmsFetched = {[weak self] films in
+            self?.sut.showListFilms(films: films)
+            guard let result = self?.mockCoordinator.showListFilmsCalled else { return }
+            XCTAssertTrue(result)
+        }
+
+        sut.searchFilms(query: query)
+
+    }
 }

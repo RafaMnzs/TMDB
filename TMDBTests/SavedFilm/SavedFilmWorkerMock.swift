@@ -1,11 +1,11 @@
 import XCTest
 @testable import TMDB
 
-class SearchFilmsWorkerMock: SearchFilmsWorkerProtocol {
+class SavedFilmWorkerMock: SavedFilmsWorkerProtocol {
     var fetchCalled = false
     var shouldReturnError = false
 
-    func fetch(query: String, completion: @escaping (Result<SearchFilmsResponse, Error>) -> Void) {
+    func fetch(completion: @escaping (Result<[Film], any Error>) -> Void) {
         fetchCalled = true
         if shouldReturnError {
             completion(.failure(NSError(domain: "test", code: 1)))
@@ -15,14 +15,11 @@ class SearchFilmsWorkerMock: SearchFilmsWorkerProtocol {
                     let data = try Data(contentsOf: url)
                     let decoder = JSONDecoder()
                     let film_detail = try decoder.decode(SearchFilmsResponse.self, from: data)
-                    completion(.success(film_detail))
+                    completion(.success(film_detail.list))
                 } catch {
                     print("❌ Erro ao decodificar JSON: \(error)")
                 }
             }
-
         }
     }
 }
-
-

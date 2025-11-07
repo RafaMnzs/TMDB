@@ -35,4 +35,12 @@ final class DetailFilmViewModelTests: XCTestCase {
         }
         sut.searchFilms()
     }
+
+    func test_save() {
+        sut.onFilmFetched = { [weak self] film in
+            guard let result = self?.mockCoordinator.saveFilmCalled else { return }
+            XCTAssertTrue(result)
+        }
+        sut.save()
+    }
 }
