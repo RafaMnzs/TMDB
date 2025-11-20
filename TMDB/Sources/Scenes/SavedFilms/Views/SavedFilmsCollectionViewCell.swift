@@ -1,6 +1,6 @@
 import UIKit
 
-class SavedFilmsViewCell: UICollectionViewCell, ViewCode {
+final class SavedFilmsViewCell: UICollectionViewCell, ViewCode {
 
     static let identifier = "cell"
 

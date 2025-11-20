@@ -49,6 +49,5 @@ final class SearchFilmsViewModelTests: XCTestCase {
         }
 
         sut.searchFilms(query: query)
-
     }
 }

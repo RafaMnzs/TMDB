@@ -18,15 +18,15 @@ public class Dispatcher: DispatcherProtocol {
         header(header: request.header, config: &config)
         switch request.method {
         case .GET:
-            config.httpMethod = "GET"
+            config.httpMethod = request.method.rawValue
         case .POST:
-            config.httpMethod = "POST"
+            config.httpMethod = request.method.rawValue
             config.httpBody = try? JSONSerialization.data(withJSONObject: request.body as Any, options: .prettyPrinted)
         case .PUT:
-            config.httpMethod = "PUT"
+            config.httpMethod = request.method.rawValue
             config.httpBody = try? JSONSerialization.data(withJSONObject: request.body as Any, options: .prettyPrinted)
         case .DELETE:
-            config.httpMethod = "DELETE"
+            config.httpMethod = request.method.rawValue
             config.httpBody = try? JSONSerialization.data(withJSONObject: request.body as Any, options: .prettyPrinted)
         }
 
@@ -57,7 +57,7 @@ public class Dispatcher: DispatcherProtocol {
                 } catch {
                     completion(.failure(error))
                 }
-            }
+           }
         }).resume()
     }
 }

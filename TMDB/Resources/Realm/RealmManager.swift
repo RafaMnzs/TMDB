@@ -1,7 +1,14 @@
 import Foundation
 import RealmSwift
 
-final class RealmManager {
+protocol RealmManagerProtocol {
+    func saveFilm(_ film: DetailFilmResponse)
+    func deleteFilm(_ filmId: Int)
+    func isSaved(_ film: Int) -> Bool
+    func fetchAll() -> [DetailFilmResponse]
+}
+
+final class RealmManager: RealmManagerProtocol {
 
     static let shared = RealmManager()
     private let realm: Realm
@@ -47,11 +54,11 @@ final class RealmManager {
         }
     }
 
-    func isFilmSaved(_ film: Int) -> Bool {
+    func isSaved(_ film: Int) -> Bool {
        return realm.object(ofType: DetailFilmResponse.self, forPrimaryKey: film) != nil
     }
 
-    func fetchAllFilms() -> [DetailFilmResponse] {
+    func fetchAll() -> [DetailFilmResponse] {
         return Array(realm.objects(DetailFilmResponse.self))
     }
 }

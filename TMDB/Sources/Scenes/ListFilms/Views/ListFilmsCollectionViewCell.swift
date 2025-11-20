@@ -1,6 +1,6 @@
 import UIKit
 
-class ListFilmsViewCell: UICollectionViewCell, ViewCode {
+final class ListFilmsViewCell: UICollectionViewCell, ViewCode {
 
     static let identifier = "cell"
 
@@ -60,7 +60,7 @@ class ListFilmsViewCell: UICollectionViewCell, ViewCode {
 
     private func isFavorite(item: Film) {
         DispatchQueue.main.async { [weak self] in
-            let isSaved = RealmManager.shared.isFilmSaved(item.id)
+            let isSaved = RealmManager.shared.isSaved(item.id)
             self?.starImageView.isHidden = !isSaved
         }
     }

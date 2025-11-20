@@ -6,7 +6,7 @@ protocol SavedFilmsWorkerProtocol: AnyObject {
 
 class SavedFilmsWorker: SavedFilmsWorkerProtocol {
     func fetch(completion: @escaping (Result<[Film], any Error>) -> Void) {
-        let savedFilms = RealmManager.shared.fetchAllFilms().map { $0.toFilm() }
+        let savedFilms = RealmManager.shared.fetchAll().map { $0.toFilm() }
         completion(.success(savedFilms))
     }
 }
