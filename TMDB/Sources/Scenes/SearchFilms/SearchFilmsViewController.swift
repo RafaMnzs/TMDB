@@ -21,7 +21,7 @@ final class SearchFilmsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Buscar Filmes"
+        self.title = Strings.SearchView.title
         customView.delegate = self
         bindUI()
     }

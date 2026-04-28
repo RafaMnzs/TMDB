@@ -23,12 +23,14 @@ public class SearchFilmsViewModel: SearchFilmsViewModelProtocol {
 
     func searchFilms(query: String) {
         worker.fetch(query: query) { [weak self] result in
-            switch result {
-            case .success(let response):
-                self?.onFilmsFetched?(response.list)
-            case .failure(let err):
-                self?.onFilmsFetchedError?(err)
-            }
+           DispatchQueue.main.async {
+                switch result {
+                case .success(let response):
+                    self?.onFilmsFetched?(response.list)
+                case .failure(let err):
+                    self?.onFilmsFetchedError?(err)
+                }
+           }
         }
     }
 

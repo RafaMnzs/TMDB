@@ -107,17 +107,16 @@ public final class DetailFilmView: UIView, ViewCode {
         }
 
         if let date = film.releaseDate.toBrazilianDate() {
-            releaseDateLabel.text = "Data de lançamento: \(date)"
+            releaseDateLabel.text = "\(Strings.DetailFilmView.release) \(date)"
         }
 
         titleLabel.text = film.title
-        originalTitleLabel.text = "Titulo Original: \(film.originalTitle)"
-        overviewLabel.text = "Resumo: \(film.overview ?? String())"
-        overviewLabel.text = "Resumo: \(film.overview ?? String())"
+        originalTitleLabel.text = "\(Strings.DetailFilmView.originalTitle) \(film.originalTitle)"
+        overviewLabel.text = "\(Strings.DetailFilmView.resume) \(film.overview ?? String())"
 
-        budgetLabel.text = "Custo de Produção: \(film.budget.toDollarString())"
-        revenueLabel.text = "Arrecadação: \(film.revenue.toDollarString())"
-        voteAverageLabel.text = "Média de Votos: \(film.voteAverage)"
+        budgetLabel.text = "\(Strings.DetailFilmView.cost) \(film.budget.toDollarString())"
+        revenueLabel.text = "\(Strings.DetailFilmView.revenue) \(film.revenue.toDollarString())"
+        voteAverageLabel.text = "\(Strings.DetailFilmView.voteAverage) \(film.voteAverage)"
     }
 }
 

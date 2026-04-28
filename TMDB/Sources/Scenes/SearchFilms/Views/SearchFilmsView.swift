@@ -16,7 +16,7 @@ public final class SearchFilmsView: UIView, ViewCode {
 
     private lazy var searchBar: UITextField = {
         let _textField = UITextField()
-        _textField.placeholder = "Digite o nome do filme"
+        _textField.placeholder = Strings.SearchView.SearchBar.placeholder
         _textField.delegate = self
         _textField.translatesAutoresizingMaskIntoConstraints = false
         return _textField
@@ -24,7 +24,7 @@ public final class SearchFilmsView: UIView, ViewCode {
 
     private lazy var searchBtn: UIButton = {
         let _button = UIButton()
-        _button.setTitle("Buscar", for: .normal)
+        _button.setTitle(Strings.SearchView.SearchBar.Button.title, for: .normal)
         _button.backgroundColor = .systemBlue
         _button.translatesAutoresizingMaskIntoConstraints = false
         _button.layer.cornerRadius = 10

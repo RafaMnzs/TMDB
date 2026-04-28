@@ -2,11 +2,16 @@ import Foundation
 import RealmSwift
 
 class DetailFilmResponse: Object, Decodable {
+    var genres = List<Genre>()
+    var productionCompanies = List<ProductionCompany>()
+    var productionCountries = List<ProductionCountry>()
+    var runtime = RealmOptional<Int>()
+    var spokenLanguages = List<SpokenLanguage>()
+
     @objc dynamic var adult: Bool = false
     @objc dynamic var backdropPath: String? = nil
     @objc dynamic var belongsToCollection: BelongsToCollection? = nil
     @objc dynamic var budget: Int = 0
-    var genres = List<Genre>()
     @objc dynamic var homepage: String? = nil
     @objc dynamic var id: Int = 0
     @objc dynamic var imdbID: String? = nil
@@ -15,12 +20,8 @@ class DetailFilmResponse: Object, Decodable {
     @objc dynamic var overview: String? = nil
     @objc dynamic var popularity: Double = 0.0
     @objc dynamic var posterPath: String? = nil
-    var productionCompanies = List<ProductionCompany>()
-    var productionCountries = List<ProductionCountry>()
     @objc dynamic var releaseDate: String = ""
     @objc dynamic var revenue: Int = 0
-    var runtime = RealmOptional<Int>()
-    var spokenLanguages = List<SpokenLanguage>()
     @objc dynamic var status: String = ""
     @objc dynamic var tagline: String? = nil
     @objc dynamic var title: String = ""
@@ -31,8 +32,7 @@ class DetailFilmResponse: Object, Decodable {
     override class func primaryKey() -> String? {
         return "id"
     }
-
-
+    
     enum CodingKeys: String, CodingKey {
         case adult
         case backdropPath = "backdrop_path"

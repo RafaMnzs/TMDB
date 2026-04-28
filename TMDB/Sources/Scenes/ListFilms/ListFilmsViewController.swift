@@ -21,9 +21,12 @@ final class ListFilmsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Lista de Filmes"
+        title = Strings.ListFilmsView.title
         customView.delegate = self
-        customView.settings(itens: viewModel?.films ?? [])
+
+        if let films = viewModel?.films {
+            customView.settings(itens: films)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

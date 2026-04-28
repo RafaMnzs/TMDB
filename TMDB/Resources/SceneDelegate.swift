@@ -33,8 +33,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         savedFilmsCoordinator.start()
 
         let tabBarController = UITabBarController()
-        navController.tabBarItem = UITabBarItem(title: "Filmes", image: UIImage(systemName: "film"), selectedImage: UIImage(systemName: "film.fill"))
-        savedFilmsNavController.tabBarItem = UITabBarItem(title: "Favoritos", image: UIImage(systemName: "star"), selectedImage: UIImage(systemName: "star.fill"))
+        navController.tabBarItem = UITabBarItem(title: Strings.TabBar.Movies.title, image: UIImage(systemName: "film"), selectedImage: UIImage(systemName: "film.fill"))
+        savedFilmsNavController.tabBarItem = UITabBarItem(title: Strings.TabBar.Favorite.title, image: UIImage(systemName: "star"), selectedImage: UIImage(systemName: "star.fill"))
 
         tabBarController.viewControllers = [navController, savedFilmsNavController]
         tabBarController.tabBar.tintColor = .label

@@ -27,12 +27,14 @@ class DetailFilmViewModel: DetailFilmViewModelProtocol {
     func searchFilms() {
         guard let id = coordinator?.film.id else { return }
         worker.fetch(id: id) { [weak self] result in
-            switch result {
-            case .success(let film):
-                self?.film = film
-                self?.onFilmFetched?(film)
-            case .failure(let error):
-                self?.onFilmFetchedError?(error)
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let film):
+                    self?.film = film
+                    self?.onFilmFetched?(film)
+                case .failure(let error):
+                    self?.onFilmFetchedError?(error)
+                }
             }
         }
     }

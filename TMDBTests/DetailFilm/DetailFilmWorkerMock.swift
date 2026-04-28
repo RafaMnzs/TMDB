@@ -17,7 +17,7 @@ class DetailFilmWorkerMock: DetailFilmWorkerProtocol {
                     let filmDetail = try decoder.decode(DetailFilmResponse.self, from: data)
                     completion(.success(filmDetail))
                 } catch {
-                    print("❌ Erro ao decodificar JSON: \(error)")
+                    print("Erro ao decodificar JSON: \(error)")
                 }
             }
 

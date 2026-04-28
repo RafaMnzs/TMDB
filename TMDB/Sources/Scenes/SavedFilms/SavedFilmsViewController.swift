@@ -21,7 +21,8 @@ final class SavedFilmsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Favoritos"
+        title = Strings.SavedMoviesView.title
+        
         customView.delegate = self
         bindUI()
     }

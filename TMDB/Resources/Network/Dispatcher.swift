@@ -48,7 +48,7 @@ public class Dispatcher: DispatcherProtocol {
                 return
             }
 
-            DispatchQueue.main.async {
+            DispatchQueue.global(qos: .background).async {
                 do {
                     guard let data = data else { return }
                     self.show(debug: debug, request: config, content: data)
@@ -57,7 +57,7 @@ public class Dispatcher: DispatcherProtocol {
                 } catch {
                     completion(.failure(error))
                 }
-           }
+            }
         }).resume()
     }
 }
